@@ -1,0 +1,8 @@
+{
+  "connectionString": "mongodb://localhost/node-mongo-registration-login-api",
+  "secret": "cHiAj7V9zr57I0sU3YV50dBD5htFuXFm",
+  "path": [
+    "/users/authenticate",
+    "/users/register"
+  ]
+}
