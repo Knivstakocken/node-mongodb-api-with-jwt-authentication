@@ -20,7 +20,7 @@ function authenticate(req, res, next) {
 
 function register(req, res, next) {
     userService.create(req.body)
-        .then(() => res.json({ message: 'User was successfuly created.' }))
+        .then(() => res.json({}))
         .catch(err => next(err));
 }
 
@@ -37,13 +37,13 @@ function getCurrent(req, res, next) {
 }
 
 function getById(req, res, next) {
-    userService.getById(req.params.id)
+    userService.getById(req.body.id)
         .then(user => user ? res.json(user) : res.sendStatus(404))
         .catch(err => next(err));
 }
 
 function update(req, res, next) {
-    userService.update(req.params.id, req.body)
+    userService.update(req.body.id, req.body)
         .then(() => res.json({}))
         .catch(err => next(err));
 }
