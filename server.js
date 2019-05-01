@@ -14,12 +14,7 @@ app.use(compression());
 
 app.use(cors());
 
-app.use(helmet({
-  frameguard: {
-    action: 'deny'
-  },
-  noCache: true
-}));
+app.use(helmet());
 
 
 // use JWT auth to secure the api
@@ -27,7 +22,7 @@ app.use(jwt());
 
 // api routes
 app.use('/users', require('./users/users.controller'));
-app.use('/workouts', require('./workouts/workouts.controller'));
+// app.use('/workouts', require('./workouts/workouts.controller'));
 
 // global error handler
 app.use(errorHandler);
